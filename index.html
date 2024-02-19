@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="w-[100%] h-screen  flex justify-center items-center  bg-cover backdrop-blur  bg-center bg-no-repeat "  style="background-image: url('random images/5i404z5tt04a1.jpg');">
+     <div class="btn1 bg-white"><button>left</button></div>
+        <div class="gallery w-52  h-96 bg-slate-500">
+            <img src="random images/5i404z5tt04a1.jpg" alt="image" class="h-[100%]">
+        </div>
+        <div class="btn2 bg-white"><button>right</button></div>
+       
+</body>
+<script>
+    let index=0;
+    let gallery=[
+      "random images/5i404z5tt04a1.jpg",
+      "random images/2020102308530167a26f37ba2_th_1024x0.jpg",
+      "random images/jujutsu-kaisen-wallpaper-98.jpg",
+      "random images/Nobara-black-flash.jpg",
+    ]
+    let rightBtn=document.querySelector(".btn1")
+    let leftBtn=document.querySelector(".btn2")
+    let backgroungImg=document.querySelector("body")
+let imgGallery=document.querySelector(".gallery")
+    let current=()=>{
+ 
+    let img=imgGallery.querySelector("img")
+img.src=gallery[index]
+backgroungImg.style.background= `url('${gallery[index]}')`;
+
+
+
+    }
+rightBtn.addEventListener("click",()=>{
+    index++
+    if(index>gallery.length){
+index=0
+    }
+   
+    current()
+})
+leftBtn.addEventListener("click",()=>{
+
+    index--
+    if(index<0){
+        index=gallery.length -1
+    }
+    current()
+})
+</script>
+</html>
